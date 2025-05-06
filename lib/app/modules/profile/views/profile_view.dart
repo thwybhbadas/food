@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:food/app/modules/auth/controllers/auth_controller.dart';
 
 import 'package:get/get.dart';
 
 import '../controllers/profile_controller.dart';
 
 class ProfileView extends GetView<ProfileController> {
-  const ProfileView({super.key});
+   ProfileView({super.key});
+    final AuthController authController = Get.find();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,11 +16,8 @@ class ProfileView extends GetView<ProfileController> {
         title: const Text('ProfileView'),
         centerTitle: true,
       ),
-      body: const Center(
-        child: Text(
-          'ProfileView is working',
-          style: TextStyle(fontSize: 20),
-        ),
+      body:  Center(
+        child:Text('مرحباً ${authController.username}'),
       ),
     );
   }
